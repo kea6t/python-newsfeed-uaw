@@ -1,0 +1,12 @@
+{
+    "cSpell.words": [
+        "dotenv",
+        "onupdate",
+        "sessionmaker",
+        "sqlalchemy"
+    ],
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    },
+    "python.formatting.provider": "none"
+}
