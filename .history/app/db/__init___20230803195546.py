@@ -4,7 +4,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from dotenv import load_dotenv
 from flask import g
-from sqlalchemy.exc import IntegrityError
 
 load_dotenv()
 
@@ -20,14 +19,6 @@ def get_db():
 
   return g.db
 
-def close_db(e = None):
-    db = g.pop('db', None)
-    
-    if db is not None:
-        db.close()
-
-def init_db(app):
+def init_db():
     Base.metadata.create_all(engine)
-    
-    app.teardown_appcontext(close_db)
     

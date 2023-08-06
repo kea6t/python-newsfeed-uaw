@@ -18,6 +18,18 @@ class Post(Base):
         select(func.count(Vote.id)).where(Vote.post_id == id)
     )
     votes = relationship("Vote", cascade="all,delete")
+    
+    
+    # Inside the vote_count method, we use SQLAlchemy's func.count(Vote.id) to count the number of votes. 
+    # The Vote.id is a reference to the id column in the Vote table.
+    # We add a filter to the count function, filter(Vote.post_id == self.id). 
+    # This filter ensures that we only count the votes that are associated with the current Post instance. 
+    # The self.id refers to the id of the current post.
+    # By using the @column_property decorator, we are telling SQLAlchemy to treat this method as a column in the database table. 
+    # It allows us to access the vote count as if it were a regular attribute of the Post class.
+    # @column_property
+    # def vote_count(self):
+    #     return func.count(Vote.id).filter(Vote.post_id == self.id)
 
     comments = relationship("Comment", cascade="all,delete")
 

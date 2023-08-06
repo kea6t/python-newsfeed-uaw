@@ -4,7 +4,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from dotenv import load_dotenv
 from flask import g
-from sqlalchemy.exc import IntegrityError
 
 load_dotenv()
 
