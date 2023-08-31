@@ -23,7 +23,14 @@
     <link rel="icon" type="image/png" href="favicon.png" />
   </head>
 
-  
+  {% comment %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UAW Local 2503 NH TG & POKER</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  {% endcomment %}
 
   <body>
     <!-- Begin Preloader -->
@@ -63,7 +70,7 @@
                 <a class="navbar-item" href="#home"> Home </a>
               </div>
               <div class="navbar-item">
-                <a class="navbar-item" href="#about-me"> About Us </a>
+                <a class="navbar-item" href="#about-me"> About Me </a>
               </div>
               <div class="navbar-item">
                 <a class="navbar-item" href="#services"> Services </a>
@@ -112,16 +119,16 @@
                     <a href="#home">Home</a>
                   </li>
                   <li>
-                    <a href="#about-me">About Us</a>
+                    <a href="#about-me">About Me</a>
                   </li>
                   <li>
                     <a href="#services">Services</a>
                   </li>
                   <li>
-                    <a href="#skills">Blog</a>
+                    <a href="#skills">Skills</a>
                   </li>
                   <li>
-                    <a href="#my-work">Take Action</a>
+                    <a href="#my-work">My Work</a>
                   </li>
                   <li>
                     {% if loggedIn == True %}
@@ -166,6 +173,5 @@
     {% if loggedIn %}
     <script src="/javascript/logout.js"></script>
     {% endif %}
-    <script src="../../static/javascript/showcase.js"></script>
   </body>
 </html>

@@ -11,7 +11,7 @@ class User(Base):
     username = Column(String(50), nullable = False)
     email = Column(String(50), nullable = False, unique = True)
     password = Column(String(100), nullable = False)
-    # is_admin = Column(Boolean, default = False)
+    is_admin = Column(Boolean, default = False)
     
     @validates('email')
     def validate_email(self, key, email):

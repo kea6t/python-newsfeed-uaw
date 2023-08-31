@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UAW Local 2503 NH TG & POKER</title>
+  <!-- Bulma Version 0.9.4-->
+  <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.4/css/bulma.min.css" />
+  <link rel="stylesheet" type="text/css" href="../../static/stylesheets/showcase.css" />
+  <script src="https://kit.fontawesome.com/2828f7885a.js" integrity="sha384-WAsFbnLEQcpCk8lM1UTWesAf5rGTCvb2Y+8LvyjAAcxK1c3s5c0L+SYOgxvc6PWG" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/png" href="favicon.png" />
+</head>
+<body>
+  <div class="preloader-wrapper">
+    <div class="preloader">
+      <img src="img/preloader.gif" alt="" />
+    </div>
+  </div>
+
+  <form action="#home">
+    <button id="toTop" title="Go to top">
+      <i class="fas fa-angle-up"></i>
+    </button>
+  </form>
+
+  <div class="header-wrapper" id="home">
+    <section class="hero is-large">
+      <nav class="navbar is-fixed-top is-transparent is-hidden-desktop">
+        <div class="navbar-brand">
+          <div class="navbar-burger burger" data-target="mobile-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <div id="mobile-nav" class="navbar-menu">
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <a class="navbar-item" href="#home"> Home </a>
+            </div>
+            <div class="navbar-item">
+              <a class="navbar-item" href="#about-me"> About Us </a>
+            </div>
+            <div class="navbar-item">
+              <a class="navbar-item" href="#services"> Services </a>
+            </div>
+            <div class="navbar-item">
+              <a class="navbar-item" href="#skills"> Skills </a>
+            </div>
+            <div class="navbar-item">
+              <a class="navbar-item" href="#my-work"> My Work </a>
+            </div>
+            <div class="navbar-item">
+              {% if loggedIn == True %}
+              <a href="/dashboard">dashboard</a>
+              <button id="logout" class="btn-no-style">logout</button>
+              {% else %}
+              <a href="/login">login</a>
+              {% endif %}
+            </div>
+            <div class="navbar-item">
+              <a class="navbar-item" href="#contact"> Contact </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="subtitle">Local</h1>
+          <h2 class="title">UAW 2503</h2>
+          <h1 class="subtitle profession">National Harbor Table Games and Poker</h1>
+        </div>
+      </div>
+      <div class="hero-foot">
+        <div class="hero-foot--wrapper">
+          <div class="columns">
+            <div class="column is-12 hero-menu-desktop has-text-centered is-fixed-top">
+              <ul>
+                <li class="is-active">
+                  <a href="#home">Home</a>
+                </li>
+                <li>
+                  <a href="#about-me">About Us</a>
+                </li>
+                <li>
+                  <a href="#services">Services</a>
+                </li>
+                <li>
+                  <a href="#skills">Blog</a>
+                </li>
+                <li>
+                  <a href="#my-work">Take Action</a>
+                </li>
+                <li>
+                  {% if loggedIn == True %}
+                  <a href="/dashboard">dashboard</a>
+                  <button id="logout" class="btn-no-style">logout</button>
+                  {% else %}
+                  <a href="/login">login</a>
+                  {% endif %}
+                </li>
+                <li>
+                  <a href="#contact">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="wrapper">
+    <header>
+      <h1>
+        <a href="/">UAW 2503</a>
+      </h1>
+      <nav>
+        {% if loggedIn == True %}
+        <a href="/dashboard">Dashboard</a>
+        <button id="logout" class="btn-no-style">Logout</button>
+        {% else %}
+        <a href="/login">Login</a>
+        {% endif %}
+      </nav>
+    </header>
+    <main>
+      {% block body %}
+      <!-- Your content goes here -->
+      {% endblock %}
+    </main>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <a href="/">UAW 2503</a>
+      </div>
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about-me">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#my-work">My Work</a></li>
+          <li>
+            {% if loggedIn == True %}
+            <a href="/dashboard">Dashboard</a>
+            <button id="logout-footer" class="btn-no-style">Logout</button>
+            {% else %}
+            <a href="/login">Login</a>
+            {% endif %}
+          </li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="footer-social">
+        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/javascript/mobile-nav.js"></script>
+  <script src="/javascript/scroll-to-top.js"></script>
+  <script src="/javascript/logout.js"></script>
+</body>
+</html>
